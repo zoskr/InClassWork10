@@ -7,21 +7,18 @@ CS_req = ("CS 1000","CS 2000","CS 3000")
 EE_req = ("EE 1000", "EE 2000")
 PHYS_req = ("PHYS 1000", "PHYS 2000")
 
-class standard_major:
-    def __init__(self,name,major):
-        self.name = name
+class courseReq:
+    def __init__(self, major, req):
         self.major = major
-        
-    def course_req(self):
-        if self.major == "EECE":
-            print(EE_req)
-
-class student:
-    def __init__(self,name):
-        self.name = name
+        self.req = req
 
 
-
+class standard_major(courseReq):
+    def __init__(self,major):
+        self.major 
+    
+#class double_major(standard_major,courseReq):
+    
 
 
 
@@ -31,4 +28,10 @@ class student:
 
 
 
-s1 = standard_major("Bobby","EECE")
+
+
+
+
+x = courseReq("Chem", CHEM_req)
+
+
