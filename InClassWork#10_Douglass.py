@@ -13,12 +13,20 @@ class major1:
     def __init__(self,major,courseReq):
         self.major = major
         self.courseReq = courseReq
-    
+        
+class major2:
+    def __init__(self,major,courseReq):
+        self.major = major
+        self.courseReq = courseReq
 
-class student(major1):
+class student(major1): #single inheritance
     def __init__(self,name,major,courseReq):
         super().__init__(major, courseReq)
         self.name = name
+        
+        
+class combined(student, major2):
+    
 
 
 
