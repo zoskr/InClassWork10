@@ -16,8 +16,9 @@ class standard_major:
         if self.major == "EECE":
             print(EE_req)
 
-
-
+class student:
+    def __init__(self,name):
+        self.name = name
 
 
 
