@@ -1,10 +1,11 @@
-CHEM_req = ("CHEM 1000","CHEM 2000", "CHEM 3000")
-ENV_req = ("ENV 1000","ENV 2000", "ENV 3000")
-CE_req = ("EECE 1000","EECE 2000","EECE 3000")
-CS_req = ("CS 1000","CS 2000","CS 3000")
-EE_req = ("EE 1000", "EE 2000")
-PHYS_req = ("PHYS 1000", "PHYS 2000")
-Renewable_Concentration = ("ENV 1234","GE 1111")
+CHEM_req = ["CHEM 1000","CHEM 2000", "CHEM 3000"]
+ENV_req = ["ENV 1000","ENV 2000", "ENV 3000"]
+CE_req = ["EECE 1000","EECE 2000","EECE 3000"]
+CS_req = ["CS 1000","CS 2000","CS 3000"]
+EE_req = ["EE 1000", "EE 2000"]
+PHYS_req = ["PHYS 1000", "PHYS 2000"]
+Renewable_Concentration = ["ENV 1234","GE 1111"]
+Land_Resources = ["ENV 2345","CIV 2356"]
 
 class student:
     def __init__(self,name):
@@ -46,8 +47,15 @@ class ChemEnv(Chem,Env):
         self.classes = CHEM_req
         self.classes.append(ENV_req)
         
-class ChemConcentration(Chem):
+class EnergyConcentration(Chem):
     def __init__(self, name):
         super().__init__(name)
         self.classes.append(Renewable_Concentration)
-
+        
+class LandResourcesConcentration(Chem): #hierarchical?
+    def __init__(self, name):
+        super().__init__(name)
+        self.classes.append(Land_Resources)
+        
+s1 = EnergyConcentration("joe")
+print(s1.classes) #works!
