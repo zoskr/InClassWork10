@@ -8,9 +8,17 @@ Renewable_Concentration = ["ENV 1234","GE 1111"]
 Land_Resources = ["ENV 2345","CIV 2356"]
 
 class student:
+    
     def __init__(self,name):
         self.name = name
-
+        self.registered_courses = []
+        
+   
+    def register(self,choice):
+        self.registered_courses.append(choice)
+        return self.registered_courses
+        
+    
 class Chem(student):
     def __init__(self, name):
         super().__init__(name)
@@ -57,5 +65,29 @@ class LandResourcesConcentration(Chem): #hierarchical?
         super().__init__(name)
         self.classes.append(Land_Resources)
         
-s1 = EnergyConcentration("joe")
-print(s1.classes) #works!
+        
+def main():
+    s1 = Chem("joe")
+    print(s1.classes) #works!
+    
+    choice = 'CHEM 1567' #also works!
+    
+    if choice in s1.classes:
+        print(s1.register(choice))
+        
+    else:
+        print("Not in required courses")
+    
+main()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
