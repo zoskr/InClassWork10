@@ -4,6 +4,7 @@ CE_req = ("EECE 1000","EECE 2000","EECE 3000")
 CS_req = ("CS 1000","CS 2000","CS 3000")
 EE_req = ("EE 1000", "EE 2000")
 PHYS_req = ("PHYS 1000", "PHYS 2000")
+Renewable_Concentration = ("ENV 1234","GE 1111")
 
 class student:
     def __init__(self,name):
@@ -44,4 +45,9 @@ class ChemEnv(Chem,Env):
         super().__init__(name)
         self.classes = CHEM_req
         self.classes.append(ENV_req)
+        
+class ChemConcentration(Chem):
+    def __init__(self, name):
+        super().__init__(name)
+        self.classes.append(Renewable_Concentration)
 
