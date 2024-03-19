@@ -4,11 +4,10 @@ CHEM_req = ["CHEM 1000","CHEM 2000", "CHEM 3000"] #lists containing required cou
 ENV_req = ["ENV 1000","ENV 2000", "ENV 3000"]     #available for each department and the sample cases for concentrations
 CE_req = ["EECE 1000","EECE 2000","EECE 3000"]
 CS_req = ["CS 1000","CS 2000","CS 3000"]
-EE_req = ["EE 1000", "EE 2000"]
+EE_req = ["EECE 1000", "EECE 2000"]
 PHYS_req = ["PHYS 1000", "PHYS 2000"]
 Renewable_Concentration = ["ENV 1234","GE 1111"]
 Land_Resources = ["ENV 2345","CIV 2356"]
-EE_Electives = ['EECE 2140','EECE 2150']
 
 class student: #parent class for the departments
     
@@ -47,6 +46,7 @@ class EE(student):
     def __init__(self, name):
         super().__init__(name)
         self.classes = EE_req
+        self.EE_Electives = ['EECE 2140','EECE 2150']
         
 class Phys(student):
     def __init__(self, name):
@@ -80,26 +80,17 @@ def case1(): #sample cases
     
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def case3():
     s3 = EE('Sarah')
+    choice = 'EECE 2140'
+    if choice in s3.EE_Electives:
+        print(s3.register(choice))
+    else:
+        print("Not in applicable courses")
+            
+
+def case5()
+    
     
     
     
