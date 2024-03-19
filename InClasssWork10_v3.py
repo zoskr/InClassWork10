@@ -38,7 +38,8 @@ class CE(student):
     def __init__(self, name):
         super().__init__(name)
         self.classes = CE_req
-       
+        self.CE_Electives = ["EE 1000"]
+        
 class CS(student):
     def __init__(self, name):
         super().__init__(name)
@@ -48,7 +49,8 @@ class EE(student):
     def __init__(self, name):
         super().__init__(name)
         self.classes = EE_req
-       
+        self.EE_Electives = ['EECE 2140','EECE 2150']
+        
 class Phys(student):
     def __init__(self, name):
         super().__init__(name)
@@ -117,8 +119,27 @@ def case4():
             print(s4.register(c2))
     else:
         print("Not in required courses")
-       
-       
+        
+def case5():
+    s5 = Phys("Becky")
+    course1 = 'PHYS 1000'
+    course2 = 'PHYS 2000'
+    
+    if course1 in s5.registered_courses.values(): #showing denial based on prereq not met
+        s5.register(course2)
+        print("Student has been registered")
+    else:
+        print("Student cannot be registered, prerequisite not met")
+        
+    c1 = {"2:00":"PHYS 1000"} 
+    
+    s5.register(c1) #prereq added to taken courses
+    if course1 in s5.registered_courses.values(): #shows successful class add
+        s5.register(course2)
+        print("Student has been registered")
+    else:
+        print("Student cannot be registered, prerequisite not met")
+        
 def case6():
     s6 = CS("joe")
     c1 = {"8:00":"CS 1000"}
@@ -196,3 +217,4 @@ def case7(): #test case seven
         print("Not in applicable courses")
         
         
+case5()
