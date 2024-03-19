@@ -71,9 +71,9 @@ class LandResourcesConcentration(Chem): #multilevel, hierarchical
         
 def main(): #sample cases
     s1 = Chem("joe")
-    print(s1.classes) #works!
+    print(s1.classes) 
     
-    choice = 'CHEM 1567' #also works!
+    choice = 'CHEM 1567' 
     
     if choice in s1.classes:
         print(s1.register(choice))
