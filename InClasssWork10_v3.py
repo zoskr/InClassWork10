@@ -8,6 +8,7 @@ EE_req = ["EE 1000", "EE 2000"]
 PHYS_req = ["PHYS 1000", "PHYS 2000"]
 Renewable_Concentration = ["ENV 1234","GE 1111"]
 Land_Resources = ["ENV 2345","CIV 2356"]
+EE_Electives = ['EECE 2140','EECE 2150']
 
 class student: #parent class for the departments
     
@@ -78,6 +79,27 @@ def case1(): #sample cases
         print("Not in required courses")
     
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def case3():
+    s3 = EE('Sarah')
     
     
     
