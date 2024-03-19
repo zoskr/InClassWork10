@@ -28,7 +28,8 @@ class Env(student):
 class ChemEnv(Chem,Env):
     def __init__(self, name):
         super().__init__(name)
-        self.classes.append()
+        self.classes.append(self.chem_classes)
+        self.classes.append(self.env_classes)
 class EnergyConcentration(Chem):
     def __init__(self, name):
         super().__init__(name)
